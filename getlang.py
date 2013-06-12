@@ -23,6 +23,8 @@ def getlang(text):
     
     if CountEnglish > CountGerman:
         return "english"
+    elif CountGerman > CountEnglish:
+        return "german"
     else:
         return 1
 
@@ -34,10 +36,10 @@ if __name__ == "__main__":
     text = sys.stdin.read()
     
     detectedlang = getlang(text)
-    
-    if detectedlang == 0:
-        speakcomand = "say "+str(text)
-    elif detectedlang == "english":
-		speakcomand = "say -v Samantha "+str(text)
-    elif detectedlang == "german":
-        speakcomand = "say -v Anna "+str(text)
+    if sys.platform == "darwin":
+        if detectedlang == 0:
+            speakcomand = "say "+str(text)
+        elif detectedlang == "english":
+            speakcomand = "say -v Samantha "+str(text)
+        elif detectedlang == "german":
+                speakcomand = "say -v Anna "+str(text)
