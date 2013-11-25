@@ -8,7 +8,7 @@
 # 
 
 Alphabet = "abcdefghijklmnopqrstuvwxyz"
-        
+
 def encrypt(message, key):
     message = message.lower()
     key = key.lower()
