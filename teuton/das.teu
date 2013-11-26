@@ -1,0 +1,5 @@
+datei = oeffne("grammer", "r")
+
+fuer zeile im datei.lieszeilen():
+    zeile = zeile.ersetze("\n", "")
+    drucke zeile
