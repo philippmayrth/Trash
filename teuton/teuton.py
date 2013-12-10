@@ -20,8 +20,10 @@ class grammer():
     def read(self):
         python3 = []
         teuton = []
-        
-        f = open("grammer", "r")
+        if os.name != "posix":
+            f = open("teuton\grammer", "r")
+        else:
+            f = open("grammer", "r")
         for i in f.readlines():
             if i[0] != "#" and i[0] != "\n":
                 i = i.split("=")
@@ -47,6 +49,8 @@ py2teu = syntax.py2teu
 def convertTeu2py(sourceFile, destFile):
     fTeu = open(sourceFile, "r")
     assamble = "import kern.haupt as kern\n"
+    if os.name != "posix":
+        assamble = ""
         
     for line in fTeu.readlines():
         for teu in teuton:
@@ -101,6 +105,8 @@ if __name__ == "__main__":
         destFile = sourceFile + "X" # name.teuX
         convertTeu2py(sourceFile, destFile)
         cmd = "python "+destFile
+        if os.name != "posix": # win braucht mal wieder ne extra wurscht...
+            cmd = os.getcwd() + "\Python\python.exe " + destFile
         os.system(cmd)
     elif mode == "teu2py":
         convertTeu2py(sourceFile, destFile)
