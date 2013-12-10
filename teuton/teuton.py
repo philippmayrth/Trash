@@ -46,7 +46,7 @@ py2teu = syntax.py2teu
 
 def convertTeu2py(sourceFile, destFile):
     fTeu = open(sourceFile, "r")
-    assamble = ""
+    assamble = "import kern.haupt as kern\n"
         
     for line in fTeu.readlines():
         for teu in teuton:

@@ -1,3 +1,4 @@
+# Builtin types
 print=drucke
 continue=weiter
 return=zurueck
@@ -24,9 +25,23 @@ None=nix
 read=lese
 write=schreibe
 open=oeffne
+close=schliese
 break=abbrechen
+exit=ausgang
+__main__=__haupt__
 
+# string
+append=hinzufuegen
+raw_input=eingabe
+
+# File API
 readlines=lieszeilen
 readline=lieszeile
 split=spalte
 replace=ersetze
+
+# standard library
+time = zeit
+ctime = kzeit
+math = mathe
+sqrt = qwurzel

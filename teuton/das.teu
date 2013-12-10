@@ -1,5 +1,2 @@
-datei = oeffne("grammer", "r")
-
-fuer zeile im datei.lieszeilen():
-    zeile = zeile.ersetze("\n", "")
-    drucke zeile
+fuer i im bereich(1):
+    drucke "Hallo Welt!"
